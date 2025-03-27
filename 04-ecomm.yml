@@ -1,10 +1,17 @@
 ---
-- name: update all severs
-  hosts: all 
+- name: deploy web App
+  hosts: n2
   become: yes
+
   tasks:
-    - name: create info.txt with content on all servers
-      copy:
-        dest: /home/ec2-user/opt/devops/info.txt
-        content: "hello from ansible!" 
+    - name: Install git
+      yum:
+        name: git
+        state: present
+
+    - name: Host code
+      git:
+        repo: https://github.com/Tracyerite/ansible-work-4.git
+        dest:/var/www/html
+
 ...

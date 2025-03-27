@@ -1,3 +1,4 @@
+# ansible n1 -m file -a "path/home/ec2-user/ all_dir state=directory"
 ---
 - name: Install HTTPD servers
   hosts: n1
