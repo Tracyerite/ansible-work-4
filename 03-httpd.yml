@@ -1,10 +1,20 @@
 ---
-- name: update all severs
-  hosts: all 
+- name: Install HTTPD servers
+  hosts: n1
   become: yes
   tasks:
-    - name: create info.txt with content on all servers
-      copy:
-        dest: /home/ec2-user/opt/devops/info.txt
-        content: "hello from ansible!" 
+    - name: Install HTTPD
+      yum:
+        name: httpd
+        state: present
+
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+
+    - name: enable httpd
+      service:
+       name: httpd
+       enabled: yes
 ...
