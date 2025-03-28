@@ -1,11 +1,10 @@
----
-- name: fixed page
-  hosts: g3
-  become: yes
-  tasks:
-   - name: updating page
-     template:
-       src: steady.html
-       dest: /var/www/html/steady.html
-...
+<html>
+    <body>
+        <center>
+            <h1>Operating System : {{ ansible_distribution }} </h1>
+            <br>
+            <h2>Hostname : {{ ansible_hostnmame }} </h2>
+        </center>
+    </body>
+</html>
 
