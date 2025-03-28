@@ -1,10 +1,14 @@
-<html>
-    <body>
-        <center>
-            <h1>Operating System : {{ ansible_distribution }} </h1>
-            <br>
-            <h2>Hostname : {{ ansible_hostnmame }} </h2>
-        </center>
-    </body>
-</html>
+---
+- name: variable testing
+  hosts: g3
+  become: yes
+  vars:
+    myusername: Preye
+
+  tasks:
+   - name: updating page
+     template:
+       src: steady.html
+       dest: /var/www/html/steady3.html
+...
 
