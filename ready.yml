@@ -1,10 +1,7 @@
 ---
-- name: variable testing
+- name: fixed page
   hosts: g3
   become: yes
-  vars:
-    myusername: tracy
-
   tasks:
    - name: updating page
      template:
