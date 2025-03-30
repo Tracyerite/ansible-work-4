@@ -8,6 +8,6 @@
   tasks:
    - name: updating page
      template:
-       src: steady.html
-       dest: /var/www/html/steady.html
+       src: ready.j2
+       dest: /var/www/html/ready.html
 ...
